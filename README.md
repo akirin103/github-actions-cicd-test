@@ -8,3 +8,9 @@ Github Actionsを用いたCI/CDのテスト用リポジトリです。
 ```bash
 gh repo create github-actions-cicd-test --public --clone --add-readme
 ```
+
+### Github CLIからマニュアルトリガーでワークフローを実行する
+
+```bash
+gh workflow run manual.yml -f greeting="Hello from CLI"
+```
