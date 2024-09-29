@@ -1,0 +1,21 @@
+name: Compare
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+    - run: printenv | grep '_FUNC'
+      env:
+        CONTAINS_FUNC: ${{ contains('abc', 'b') }}  # true
+        STARTS_WITH_FUNC: ${{ startsWith('abc', 'a') }}  # true
+        ENDS_WITH_FUNC: ${{ endsWith('abc', 'c') }}  # true
+        FORMAT_FUNC: ${{ format('{0} {1}', 'Hello', 'World') }}  # Hello World
+        JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }}  # カンマ区切りのURL
+    - run: echo "${CONTEXT}"
+      env:
+        CONTEXT: ${{ toJson(github) }}
+    - uses: actions/checkout@v4
+    - run: echo "${HASH}"
+      env:
+        HASH: ${{ hashFiles('.github/workflows/*.yml') }}
+      
