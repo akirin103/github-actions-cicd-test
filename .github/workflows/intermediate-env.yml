@@ -1,0 +1,9 @@
+name: Intermediate Environment Variables
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
+    steps:
+      - run: echo "ACTOR=${ACTOR}"
