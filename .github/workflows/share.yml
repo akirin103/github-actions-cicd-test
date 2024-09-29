@@ -1,0 +1,13 @@
+name: Share
+on: push
+jobs:
+  share:
+    runs-on: ubuntu-latest
+    steps:
+      - id: source
+        run: echo "result=hello1" >> "${GITHUB_OUTPUT}"  # Github outputへ書き出し
+      - env:
+          RESULT: ${{ steps.source.outputs.result }}
+        run: echo "result=${RESULT}"  # Github outputから読み込み
+      - run: echo "RESULT2=hello2" >> "${GITHUB_ENV}"  # Github envへ書き出し
+      - run: echo "RESULT2=${RESULT2}"  # Github envから読み込み 
