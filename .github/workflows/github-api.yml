@@ -8,6 +8,6 @@ jobs:
       pull-requests: write  # PRへのコメントを書き込むために必要
     steps:
       - uses: actions/checkout@v4
-      - run: gh pr comment "${{ GITHUB_HEAD_REF }}"" --body "Hello, ${GITHUB_ACTOR}!"
+      - run: gh pr comment "${{ GITHUB_HEAD_REF }}" --body "Hello, ${GITHUB_ACTOR}!"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
