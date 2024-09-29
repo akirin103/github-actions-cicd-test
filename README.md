@@ -15,3 +15,9 @@ gh repo create github-actions-cicd-test --public --clone --add-readme
 ```bash
 gh workflow run manual.yml -f greeting="Hello from CLI"
 ```
+
+### ローカルでテストを実行する
+
+```bash
+go test go/excellent/*.go
+```
