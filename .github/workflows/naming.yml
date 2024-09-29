@@ -1,0 +1,10 @@
+name: Naming
+run-name: Run By @${{ github.actor }}  # Workflow Run Name
+on: push
+jobs:
+  naming:
+    name: Naming Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Amazing Script
+        run: echo "Naming"
