@@ -11,7 +11,7 @@ concurrency:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    timeout-minutes: 5  # タイムアウト時間を 5 分に設定
+    timeout-minutes: 3  # タイムアウト時間を3分に設定
     steps:
       - uses: actions/checkout@v4
       - run: |
