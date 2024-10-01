@@ -1,0 +1,11 @@
+name: Annotation
+on: push
+jobs:
+  annotation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Annotation
+        run: |  # アノテーションを追加する
+          echo "::error file=app.js,line=10,col=15::This is an error"
+          echo "::warning file=app.js,line=10,col=15::This is a warning"
+          echo "::notice file=app.js,line=10,col=15::This is a notice"
