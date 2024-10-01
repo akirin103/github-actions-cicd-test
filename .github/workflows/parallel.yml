@@ -4,12 +4,12 @@ jobs:   # jobsキーに複数のジョブを定義すれば並列実行
   first:
     runs-on: ubuntu-latest
     steps:
-      - run: run sleep 10 && echo "This is the first job"
+      - run: sleep 10 && echo "This is the first job"
   second:
     runs-on: ubuntu-latest
     steps:
-      - run: run sleep 10 && echo "This is the second job"
+      - run: sleep 10 && echo "This is the second job"
   third:
     runs-on: ubuntu-latest
     steps:
-      - run: run sleep 10 && echo "This is the third job"
+      - run: sleep 10 && echo "This is the third job"
