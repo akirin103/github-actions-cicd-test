@@ -27,3 +27,12 @@ go test go/excellent/*.go
 ```bash
 docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
 ```
+
+### ワークフロー中に使用するshellについて
+shellの指定がないと、パイプエラーが拾えないため、ワークフローのデフォルトでbashを指定しておくと良い。(pipefailを有効にするため)
+
+```yaml
+defaults:
+  run:
+    shell: bash
+```
