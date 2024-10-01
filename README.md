@@ -21,3 +21,9 @@ gh workflow run manual.yml -f greeting="Hello from CLI"
 ```bash
 go test go/excellent/*.go
 ```
+
+### actionlintでワークフローの構文をチェックする
+
+```bash
+docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
+```
