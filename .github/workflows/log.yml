@@ -1,0 +1,17 @@
+name: Log
+on: push
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log group
+        run: |
+          echo "::group::Show environment variables"
+          printenv
+          echo "::endgroup::"
+      - name: Log mask
+        env:
+          PASSWORD: SuperSecret
+        run: |
+          echo "::add-mask::${{ env.PASSWORD }}"
+          echo ${{ env.PASSWORD }}
