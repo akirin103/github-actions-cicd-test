@@ -1,6 +1,7 @@
 # github-actions-cicd-test
 Github Actionsを用いたCI/CDのテスト用リポジトリです。  
-書籍「GitHub CI/CD実践ガイド――持続可能なソフトウェア開発を支えるGitHub Actionsの設計と運用」の内容を参考にしています。
+書籍「GitHub CI/CD実践ガイド――持続可能なソフトウェア開発を支えるGitHub Actionsの設計と運用」の内容を参考にしています。  
+なお、Github Actionsのプランの関係で、一時的にパブリックリポジトリに配置しています。
 
 ## メモ
 
