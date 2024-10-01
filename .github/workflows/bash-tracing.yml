@@ -1,0 +1,13 @@
+name: Bash tracing
+on: push
+jobs:
+  bash-tracing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bash tracing
+        run: |  # Bashのトレースを有効化し、実行したコマンドをログに表示する
+          set -x
+          echo "Hello, world!"
+          date
+          hostname
+          set +x
