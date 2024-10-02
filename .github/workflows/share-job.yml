@@ -14,4 +14,4 @@ jobs:
     steps:
       - env:
           RESULT: ${{ needs.before.outputs.result }}  # before jobの出力値を参照
-        run: echo "${$RESULT}"
+        run: echo "${RESULT}"
