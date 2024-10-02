@@ -10,10 +10,10 @@ on:
 jobs:
   print:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment-name }}
+    environment: ${{ inputs.environment-name }}
     env:
       USERNAME: ${{ vars.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-      - run: echo "${USERNAME}
+      - run: echo "${USERNAME}"
       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
