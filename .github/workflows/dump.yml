@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/dump/  # ローカルアクションの呼び出し
+      - uses: ./.github/actions/dump/actions.yml  # ローカルアクションの呼び出し
         id: dump
         with:
           enable-context: 'true'
