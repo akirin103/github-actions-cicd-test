@@ -17,12 +17,6 @@ gh repo create github-actions-cicd-test --public --clone --add-readme
 gh workflow run manual.yml -f greeting="Hello from CLI"
 ```
 
-### ローカルでテストを実行する
-
-```bash
-go test go/excellent/*.go
-```
-
 ### actionlintでワークフローの構文をチェックする
 
 ```bash
@@ -43,4 +37,26 @@ Gitタグの作成とリリースノードの作成を同時に行う。
 
 ```bash
 gh release create v1.0.0 --title "v1.0.0" --notes "Release v1.0.0" --target main
+# ノートを自動生成する場合
+gh release create v2.1.0 --title "v2.1.0" --generate-notes
+```
+
+### Github CLIでプルリクエストを作成、マージする(カレントブランチをベース)
+
+```bash
+gh pr create --fill-first --label "enhancement"
+gh pr merge --merge
+```
+
+## メモ(go言語関連)
+### ローカルでテストを実行する
+
+```bash
+go test go/excellent/*.go
+```
+
+### ローカルでビルド時にバージョン情報を埋め込む
+
+```bash
+go build -o example -ldflags "-X main.version=v2.2.0" go/example/main.go
 ```
