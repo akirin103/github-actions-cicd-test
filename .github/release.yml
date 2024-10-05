@@ -1,0 +1,14 @@
+changelog:
+  categories:
+    - title: Enhancement
+      label:
+        - enhancement
+    - title: Bug Fixes
+      label:
+        - bug
+        - fixes
+  exclude_labels:
+    labels:
+      - dependencies
+    author:
+      - dependabot
