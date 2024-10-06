@@ -60,3 +60,19 @@ go test go/excellent/*.go
 ```bash
 go build -o example -ldflags "-X main.version=v2.2.0" go/example/main.go
 ```
+
+## Github Packages(Github Container Registry)にイメージをプッシュする
+
+```bash
+export GHCR_USER=$(gh config get -h github.com user)
+
+docker build -t ghcr.io/${GHCR_USER}/example:latest docker/example
+
+# Github Packagesへの権限追加
+gh auth refresh --scopes write:packages
+
+# Github Packagesへのログイン
+gh auth token | docker login ghcr.io -u $GHCR_USER --password-stdin
+
+docker push ghcr.io/${GHCR_USER}/example:latest
+```
