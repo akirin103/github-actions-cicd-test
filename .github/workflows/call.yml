@@ -1,0 +1,19 @@
+name: Call
+on: pull_request
+jobs:
+  call:
+    uses: ./.github/workflows/reusable-workflows.yml
+    with:
+      pr_number: ${{ github.event.pull_request.number }}
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: read
+      pull-requests: write
+  print:
+    runs-on: ubuntu-latest
+    needs: call
+    steps:
+      - run: echo "Result> ${MESSAGE}"
+        env:
+          MESSAGE: ${{ needs.call.outputs.message }}
